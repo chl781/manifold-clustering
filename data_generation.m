@@ -69,7 +69,7 @@ Y=[x2;y2;h];
 XY=[X,Y]';
 %plot3(XY(1:end,1),XY(1:end,2),XY(1:end,3),'.')
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),'.'),'example3.jpg')
-[A,W] = PBC_main(XY,30,0.95,3,2);
+[A,W] = PBC_main(XY,30,0.9,3,2);
 
 scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled')
 scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled')
