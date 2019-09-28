@@ -16,6 +16,8 @@ XY=[X,Y']';
 
 scatter(XY(:,1),XY(:,2),2,W(:,1),'filled')
 scatter(XY(:,1),XY(:,2),2,W(:,2),'filled')
+%mean(W(2001:4000,2))
+%mean(W(1:2000,2))
 saveas(scatter(XY(:,1),XY(:,2),2,W(:,1)),'example1eigen1.jpg')
 saveas(scatter(XY(:,1),XY(:,2),2,W(:,2)),'example1eigen2.jpg')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
