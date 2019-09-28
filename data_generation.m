@@ -12,14 +12,14 @@ XY=[X,Y']';
 %scatter(XY(:,1),XY(:,2),40,'MarkerEdgeColor',[0 .5 .5],...?
 %'MarkerFaceColor',[0 .7 .7],...?
 %'LineWidth',1.5)
-[A,W] = PBC_main(XY,20,1,3,2);
+[A,W] = PBC_main(XY,30,0.9,3,2);
 
 scatter(XY(:,1),XY(:,2),2,W(:,1),'filled')
 scatter(XY(:,1),XY(:,2),2,W(:,2),'filled')
 saveas(scatter(XY(:,1),XY(:,2),2,W(:,1)),'example1eigen1.jpg')
 saveas(scatter(XY(:,1),XY(:,2),2,W(:,2)),'example1eigen2.jpg')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %two balls intersecting Fig. 8
