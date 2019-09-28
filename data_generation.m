@@ -45,6 +45,9 @@ XY=[X,Y]';
 
 scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled')
 scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled')
+%mean(W(2001:4000,2))
+%mean(W(1:2000,2))
+%mean(sum(A))
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled'),'example2eigen1.jpg')
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled'),'example2eigen2.jpg')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,10 +74,13 @@ Y=[x2;y2;h];
 XY=[X,Y]';
 %plot3(XY(1:end,1),XY(1:end,2),XY(1:end,3),'.')
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),'.'),'example3.jpg')
-[A,W] = PBC_main(XY,30,0.9,3,2);
+[A,W] = PBC_main(XY,30,0.7,2.5,2);
 
 scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled')
-scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled')
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled')
+%mean(W(2001:4000,2))
+%mean(W(1:2000,2))
+%mean(sum(A))
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled'),'example3eigen1.jpg')
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled'),'example3eigen2.jpg')
 
