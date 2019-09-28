@@ -14,12 +14,14 @@ XY=[X,Y']';
 %'LineWidth',1.5)
 [A,W] = PBC_main(XY,30,0.9,3,2);
 
-scatter(XY(:,1),XY(:,2),2,W(:,1),'filled')
-scatter(XY(:,1),XY(:,2),2,W(:,2),'filled')
+scatter(XY(:,1),XY(:,2),3,W(:,1),'filled')
+scatter(XY(:,1),XY(:,2),3,W(:,2),'filled')
+%max(W(:,2))
 %mean(W(2001:4000,2))
 %mean(W(1:2000,2))
-saveas(scatter(XY(:,1),XY(:,2),2,W(:,1)),'example1eigen1.jpg')
-saveas(scatter(XY(:,1),XY(:,2),2,W(:,2)),'example1eigen2.jpg')
+%mean(sum(A))
+saveas(scatter(XY(:,1),XY(:,2),3,W(:,1)),'example1eigen1.jpg')
+saveas(scatter(XY(:,1),XY(:,2),3,W(:,2)),'example1eigen2.jpg')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -41,15 +43,16 @@ X=[x1;y1;z1];
 Y=[x2;y2;z2];
 XY=[X,Y]';
 %plot3(XY(1:end,1),XY(1:end,2),XY(1:end,3),'.')
-[A,W] = PBC_main(XY,30,0.8,3,2);
+[A,W] = PBC_main(XY,30,0.7,3,2);
 
-scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled')
-scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled')
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,1),'filled')
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled')
+%max(W(:,2))
 %mean(W(2001:4000,2))
 %mean(W(1:2000,2))
 %mean(sum(A))
-saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled'),'example2eigen1.jpg')
-saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled'),'example2eigen2.jpg')
+saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,1),'filled'),'example2eigen1.jpg')
+saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled'),'example2eigen2.jpg')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %one cone and one plane Fig. 3
 ns=2000;
@@ -81,6 +84,7 @@ scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled')
 %mean(W(2001:4000,2))
 %mean(W(1:2000,2))
 %mean(sum(A))
+%sensitive to epsilon
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled'),'example3eigen1.jpg')
 saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled'),'example3eigen2.jpg')
 
