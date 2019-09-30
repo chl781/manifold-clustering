@@ -17,7 +17,7 @@ th = 0:pi/250:2*pi;
 xunit = 1 * cos(th) ;
 yunit = 1 * sin(th) ;
 X_circle=[xunit',yunit'];
-[A_circle,W_circle] = PBC_main(X_circle,20,0.8,3,number_eigenvector);
+[A_circle,W_circle] = PBC_main(X_circle,20,0.9,3,number_eigenvector);
 %scatter(X_circle(:,1),X_circle(:,2),3,W_circle(:,1))
 %norm(W_circle-W_selfintersect,2)
 sum(W_circle(:,1).*W_selfintersect(:,1))
@@ -35,7 +35,7 @@ th = 0:(pi/500*1):(1*pi);
 xunit = 1 * cos(th) ;
 yunit = 1 * sin(th) ;
 X_opencircle=[xunit',yunit'];
-[A_opencircle,W_opencircle] = PBC_main(X_opencircle,20,0.8,3,number_eigenvector);
+[A_opencircle,W_opencircle] = PBC_main(X_opencircle,20,0.9,3,number_eigenvector);
 %scatter(X_opencircle(:,1),X_opencircle(:,2),3,W_opencircle(:,1))
 %norm(W_opencircle-W_selfintersect,2)
 sum(W_opencircle(:,1).*W_selfintersect(:,1))
@@ -47,5 +47,3 @@ sum(W_opencircle(:,6).*W_selfintersect(:,6))
 sum(W_opencircle(:,7).*W_selfintersect(:,7))
 sum(W_opencircle(:,8).*W_selfintersect(:,8))
 
-
-% Line 
