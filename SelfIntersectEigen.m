@@ -19,6 +19,7 @@ yunit = 1 * sin(th) ;
 X_circle=[xunit',yunit'];
 [A_circle,W_circle] = PBC_main(X_circle,20,0.9,3,number_eigenvector);
 %scatter(X_circle(:,1),X_circle(:,2),3,W_circle(:,1))
+norm(eig(A_circle)-eig(A_selfintersect),2)
 %norm(W_circle-W_selfintersect,2)
 sum(W_circle(:,1).*W_selfintersect(:,1))
 sum(W_circle(:,2).*W_selfintersect(:,2))
@@ -37,6 +38,7 @@ yunit = 1 * sin(th) ;
 X_opencircle=[xunit',yunit'];
 [A_opencircle,W_opencircle] = PBC_main(X_opencircle,20,0.9,3,number_eigenvector);
 %scatter(X_opencircle(:,1),X_opencircle(:,2),3,W_opencircle(:,1))
+norm(eig(A_opencircle)-eig(A_selfintersect),2)
 %norm(W_opencircle-W_selfintersect,2)
 sum(W_opencircle(:,1).*W_selfintersect(:,1))
 sum(W_opencircle(:,2).*W_selfintersect(:,2))
