@@ -1,4 +1,4 @@
-function [A,W] = PBC_main(X,k,epsilon,p,l)
+function [A,W] = PBC_main(X,k,k1,epsilon,p,l)
 % Manifold clustering function
 % input
 % k is the parameter for kNN
@@ -18,10 +18,13 @@ D=pdistancematrix(X,p);
 A=zeros(n,n);
 
 for i=1:n
-    M=findkNN(X,D,k,i,epsilon);
+    %disp(i)
+    M=findkNN(X,D,k,k1,i,epsilon);
     t=length(M);
-    A(i,M)=ones(1,t);
-    A(M,i)=ones(t,1);
+    if any(M~=0)
+       A(i,M)=ones(1,t);
+       A(M,i)=ones(t,1);
+    end
 end
 
 %The following is spectral clustering algorithm
