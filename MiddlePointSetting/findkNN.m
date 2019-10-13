@@ -1,8 +1,9 @@
-function M=findkNN(X,D,k,k1,i,epsilon)
+function M=findkNN(X,D,k,k1,i,epsilon,epsilon1)
 %This is for finding index of the nearest k nodes of i-th nodes which are
 %according to the constrain.
 %output is the connected point to i-th node.
 %This is for 'or'.
+[~,n]=size(X);
 M=0;
 s1=D(i,:);
 [~,I]=mink(s1,k+1);% the smallest one corresponds to 0 distance.
@@ -13,14 +14,17 @@ for s=2+k1:k+1
     path=X(I(geodesic),:); 
     pathLength=length(geodesic);
     flag=1;
-    for j=2:pathLength-1
-        if (sum((path(j,:)-path(1,:)).*(path(end,:)-path(j,:)))/ ...
-            norm(path(j,:)-path(1,:),2)/norm(path(end,:)-path(j,:),2))<epsilon
-            flag=0;
-            break
-        end
+    if pathLength<=4 % Set if two nodes are far away, we drop the connection.
+        break
     end
-    if flag==1
+    if pathLength>=5
+        t1=SmoothTheCurve(path,epsilon1);
+    end
+    a=ones(pathLength-1,n);
+    for i=1:pathLength-1
+        a(i,:)=t1(i)*path(i,:)+(1-t1(i))*path(i+1,:);
+    end
+    if determineifcontrain(a,epsilon)
         M(p)=I(s);
         p=p+1;
     end

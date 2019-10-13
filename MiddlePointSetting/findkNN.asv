@@ -11,15 +11,12 @@ p=1;
 for s=2+k1:k+1
     [~,geodesic]=dijkstra(Dt,s,1);
     path=X(I(geodesic),:); 
-    pathLength=length(panth);
+    pathLength=length(geodesic);
     flag=1;
-    for i=2:pathLength-1-1
-        
-        if <epsilon
-            M(p)=I(s);
-            p=p+1;
-        end
+    if pathLength==2 % Set if two nodes are far away, we drop the connection.
+        break
     end
+    
     if flag==1
         M(p)=I(s);
         p=p+1;
