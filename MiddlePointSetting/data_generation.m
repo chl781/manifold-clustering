@@ -12,7 +12,7 @@ XY=[X,Y']';
 %scatter(XY(:,1),XY(:,2),40,'MarkerEdgeColor',[0 .5 .5],...?
 %'MarkerFaceColor',[0 .7 .7],...?
 %'LineWidth',1.5)
-[A,W] = PBC_main(XY,30,10,0.9,3,2,0.01);
+[A,W] = PBC_main(XY,40,20,0.9,4,2,0.01);
 
 scatter(XY(:,1),XY(:,2),3,W(:,1),'filled')
 scatter(XY(:,1),XY(:,2),3,W(:,2),'filled')
@@ -36,14 +36,14 @@ y1=r.*sin(angle1).*sin(angle2);
 z1=r.*cos(angle2);
 angle3=rand(1,ns)*2*pi;
 angle4=acos(rand(1,ns)*2-1);
-x2=1.6+r.*cos(angle3).*sin(angle4);
+x2=sqrt(2)+r.*cos(angle3).*sin(angle4);
 y2=r.*sin(angle3).*sin(angle4);
 z2=r.*cos(angle4);
 X=[x1;y1;z1];
 Y=[x2;y2;z2];
 XY=[X,Y]';
 %plot3(XY(1:end,1),XY(1:end,2),XY(1:end,3),'.')
-[A,W] = PBC_main(XY,30,10,0.8,4,2,0.01);
+[A,W] = PBC_main(XY,40,20,0.95,4,2,0.01);
 
 scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,1),'filled')
 scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled')

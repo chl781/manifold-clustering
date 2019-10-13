@@ -13,7 +13,6 @@ for s=2+k1:k+1
     [~,geodesic]=dijkstra(Dt,s,1);
     path=X(I(geodesic),:); 
     pathLength=length(geodesic);
-    flag=1;
     if pathLength<=4 % Set if two nodes are far away, we drop the connection.
         break
     end

@@ -12,7 +12,7 @@ for i=1:m-1
     aiter(i,:)=t1Iter(i)*path(i,:)+(1-t1Iter(i))*path(i+1,:);
 end
 degreeiter=CheckDegree(aiter);
-while(abs(degreeiter-degree)>epsilon1)
+while(degreeiter-degree>epsilon1) %bsolute?
     a=aiter;
     degree=degreeiter;
     t1=t1Iter;
