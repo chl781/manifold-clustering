@@ -16,14 +16,15 @@ for s=2+k1:k+1
     if pathLength<=4 % Set if two nodes are far away, we drop the connection.
         break
     end
-    if pathLength>=5
+    if pathLength>=5 % These two parameters 4 and 5 can be changed
         t1=SmoothTheCurve(path,epsilon1);
     end
     a=ones(pathLength-1,n);
     for i=1:pathLength-1
         a(i,:)=t1(i)*path(i,:)+(1-t1(i))*path(i+1,:);
     end
-    if determineifcontrain(a,epsilon)
+    aDirection=a(2:end,:)-a(1:end-1,:);
+    if determineifcontrain(aDirection,epsilon)
         M(p)=I(s);
         p=p+1;
     end

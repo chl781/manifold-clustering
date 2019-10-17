@@ -18,7 +18,9 @@ D=pdistancematrix(X,p);
 A=zeros(n,n);
 
 for i=1:n
-    %disp(i)
+    if(mod(i,100)==0)
+        disp(i/100)
+    end
     M=findkNN(X,D,k,k1,i,epsilon,epsilon1);
     t=length(M);
     if any(M~=0)
