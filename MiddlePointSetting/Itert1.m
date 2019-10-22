@@ -1,4 +1,6 @@
 function t1Iter=Itert1(t1,path)
+%Iteration function, generating the points to smooth the path
+
 [m,n]=size(path);
 a=ones(m-1,n);
 
@@ -16,23 +18,21 @@ t1Iter=t1;
 i=1;
 t=fminbnd(@(t) -sum((a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:))).* ...
         (a(i+2,:)-a(i+1,:)))/norm(a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1);
-a(i,:)=t*path(i,:)+(1-t)*path(i,:);
+a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
 t1Iter(i)=t;
 
 for i=2:m-2
-       
     t=fminbnd(@(t) -sum((t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:)).*(a(i+1,:)- ...
         (t*path(i,:)+(1-t)*path(i+1,:))))/norm(t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:),2) ...
     /norm(a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1); 
         %This function is for finding the minimum, so we need to add some changes.
-    a(i,:)=t*path(i,:)+(1-t)*path(i,:);
+    a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
     t1Iter(i)=t;
-    
 end
 
 
 i=m-1;
 t=fminbnd(@(t) -sum((t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:)).* ...
         (a(i-1,:)-a(i-2,:)))/norm(a(i-1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1);
-a(i,:)=t*path(i,:)+(1-t)*path(i,:);
+a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
 t1Iter(i)=t;
