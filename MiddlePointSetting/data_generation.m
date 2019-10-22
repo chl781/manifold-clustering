@@ -12,18 +12,18 @@ XY=[X,Y']';
 %scatter(XY(:,1),XY(:,2),40,'MarkerEdgeColor',[0 .5 .5],...?
 %'MarkerFaceColor',[0 .7 .7],...?
 %'LineWidth',1.5)
-[A,W] = PBC_main(XY,30,15,0.9,3,4000,0.01);
+[A,W] = PBC_main(XY,30,15,0.9,3,0.01);
 
 %scatter(XY(:,1),XY(:,2),3,W(:,1),'filled')
-scatter(XY(:,1),XY(:,2),3,W(:,2),'filled')
+scatter(XY(:,1),XY(:,2),3,W,'filled')
 %max(W(:,2))
 %mean(W(2001:4000,2))
 %mean(W(1:2000,2))
 %mean(sum(A))
 %saveas(scatter(XY(:,1),XY(:,2),3,W(:,1)),'plot/example1eigen1.jpg')
-saveas(scatter(XY(:,1),XY(:,2),3,W(:,2)),'plot/TwoLine.jpg')
+saveas(scatter(XY(:,1),XY(:,2),3,W),'plot/TwoLine.jpg')
 plot(W(:,2))
-saveas(plot(W(:,2)),'plot/TwoLineEigVec.jpg')
+saveas(scatter(1:4000,W,3),'plot/TwoLineEigVec.jpg')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -45,18 +45,17 @@ X=[x1;y1;z1];
 Y=[x2;y2;z2];
 XY=[X,Y]';
 %plot3(XY(1:end,1),XY(1:end,2),XY(1:end,3),'.')
-[A,W] = PBC_main(XY,60,30,0.7,3,2,0.01);
+[A,W] = PBC_main(XY,60,30,0.6,3,0.01);
 
 %scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,1),'filled')
-scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled')
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,'filled')
 %max(W(:,2))
 %mean(W(2001:4000,2))
 %mean(W(1:2000,2))
 %mean(sum(A))
 %saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,1),'filled'),'plot/example2eigen1.jpg')
-saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled'),'plot/TwoBalls.jpg')
-plot(W(:,2))
-saveas(plot(W(:,2)),'plot/TwoBallsEigVec.jpg')
+saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W,'filled'),'plot/TwoBalls.jpg')
+saveas(scatter(1:4000,W,3),'plot/TwoBallsEigVec.jpg')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %one cone and one plane Fig. 3
 ns=2000;
@@ -81,16 +80,15 @@ Y=[x2;y2;h];
 XY=[X,Y]';
 %plot3(XY(1:end,1),XY(1:end,2),XY(1:end,3),'.')
 %saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),'.'),'example3.jpg')
-[A,W] = PBC_main(XY,60,30,0.3,3,2,0.01);
+[A,W] = PBC_main(XY,60,30,0.3,3,0.01);
 
 %scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),filled')
-scatter3(XY(:,1),XY(:,2),XY(:,3),3,W(:,2),'filled')
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,W,'filled')
 %mean(W(2001:4000,2))
 %mean(W(1:2000,2))
 %mean(sum(A))
 %sensitive to epsilon
 %saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,1),'filled'),'plot/example3eigen1.jpg')
-saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W(:,2),'filled'),'plot/ConeAndPlane.jpg')
-plot(W(:,2))
-saveas(plot(W(:,2)),'plot/ConeAndPlaneEigVec.jpg')
+saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),2,W,'filled'),'plot/ConeAndPlane.jpg')
+saveas(scatter(1:4000,W,3),'plot/ConeAndPlaneEigVec.jpg')
 

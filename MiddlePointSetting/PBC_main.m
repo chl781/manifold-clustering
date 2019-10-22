@@ -1,4 +1,4 @@
-function [A,W] = PBC_main(X,k,k1,epsilon,p,l,epsilon1)
+function [A,W] = PBC_main(X,k,k1,epsilon,p,epsilon1)
 % Manifold clustering function
 % input
 % k is the parameter for kNN
@@ -30,5 +30,5 @@ for i=1:n
 end
 
 %The following is spectral clustering algorithm
-W=spectral_clustering(A,l);
+W=spectral_clustering(A);
 end
