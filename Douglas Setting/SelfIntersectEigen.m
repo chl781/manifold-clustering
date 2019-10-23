@@ -1,0 +1,33 @@
+% self intersecting curves eigenvector analysis
+N=501;
+th=linspace(-pi,2*pi,N);
+R=3;
+x=R*cos(th)+linspace(0,6,N);
+y=R*sin(th)+linspace(0,1,N);
+plot(x,y,'b');
+X_selfintersect=[x',y'];
+[A_selfintersect,W_selfintersect] = PBC_main(X_selfintersect,20,0.9,3,0.01);
+% W: eigenvector
+%scatter(X_selfintersect(:,1),X_selfintersect(:,2),3,W_selfintersect(:,1))
+
+% Circle eigenvector
+th = 0:pi/250:2*pi;
+xunit = 1 * cos(th) ;
+yunit = 1 * sin(th) ;
+X_circle=[xunit',yunit'];
+[A_circle,W_circle] = PBC_main(X_circle,20,0.9,3,number_eigenvector);
+%scatter(X_circle(:,1),X_circle(:,2),3,W_circle(:,1))
+norm(eig(A_circle)-eig(A_selfintersect),2)
+%norm(W_circle-W_selfintersect,2)
+
+
+% Circle opening a gap.
+th = 0:(pi/500*1):(1*pi);
+xunit = 1 * cos(th) ;
+yunit = 1 * sin(th) ;
+X_opencircle=[xunit',yunit'];
+[A_opencircle,W_opencircle] = PBC_main(X_opencircle,20,0.9,3,number_eigenvector);
+%scatter(X_opencircle(:,1),X_opencircle(:,2),3,W_opencircle(:,1))
+norm(eig(A_opencircle)-eig(A_selfintersect),2)
+%norm(W_opencircle-W_selfintersect,2)
+
