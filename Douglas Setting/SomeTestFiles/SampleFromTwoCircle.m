@@ -14,7 +14,7 @@ X2=[x+xp;y+yp]';
 
 XY=[X1;X2];
 
-[A,W] = PBC_main(XY,50,20,0.9,4,2,0.01);
+[A,W] = PBC_main(XY,50,20,0.9,3);
 
 scatter(XY(:,1),XY(:,2),3,W(:,2),'filled')
 plot(W(:,2))

@@ -16,10 +16,11 @@ t1Iter=t1;
 %     deg=(C^2+B^2-A^2)/B/C;
 
 i=1;
-t=fminbnd(@(t) -sum((a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:))).* ...
-        (a(i+2,:)-a(i+1,:)))/norm(a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1);
-a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
-t1Iter(i)=t;
+%t=fminbnd(@(t) -sum((a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:))).* ...
+%        (a(i+2,:)-a(i+1,:)))/norm(a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1);
+%a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
+%t1Iter(i)=t;
+t1Iter(i)=1;
 
 for i=2:m-2
     t=fminbnd(@(t) -sum((t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:)).*(a(i+1,:)- ...
@@ -32,7 +33,8 @@ end
 
 
 i=m-1;
-t=fminbnd(@(t) -sum((t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:)).* ...
-        (a(i-1,:)-a(i-2,:)))/norm(a(i-1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1);
-a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
-t1Iter(i)=t;
+%t=fminbnd(@(t) -sum((t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:)).* ...
+%        (a(i-1,:)-a(i-2,:)))/norm(a(i-1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1);
+%a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
+%t1Iter(i)=t;
+t1Iter(i)=0;

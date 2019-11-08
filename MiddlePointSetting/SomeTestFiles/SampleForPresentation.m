@@ -16,10 +16,10 @@ z2=r.*cos(angle4);
 X=[x1;y1;z1];
 Y=[x2;y2;z2];
 XY=[X,Y]';
-[A,W] = PBC_main(XY,60,30,0.9,3,0.01);
+[A,W] = PBC_main(XY,60,30,0.95,3,0.01);
 scatter3(XY(:,1),XY(:,2),XY(:,3),3,W,'filled')
-saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,'filled'),'PresentationPlot/TwoBalls.jpg')
-saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W,'filled'),'PresentationPlot/TwoBallsManifold.jpg')
+saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,'filled'),'PresentationPlot/1/TwoBalls.jpg')
+saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W,'filled'),'PresentationPlot/1/TwoBallsManifold.jpg')
 
 %knn 
 B=zeros(4000,4000);
@@ -33,19 +33,40 @@ W2=spectral_clustering(B);
 scatter3(XY(:,1),XY(:,2),XY(:,3),3,W2,'filled')
 %scatter(1:4000,W2,3)
 
-saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W2,'filled'),'PresentationPlot/TwoBallsKnn.jpg')
+saveas(scatter3(XY(:,1),XY(:,2),XY(:,3),3,W2,'filled'),'PresentationPlot/1/TwoBallsKnn.jpg')
 
 kmean2=kmeans(W2,2);
 kmean1=kmeans(W,2);
 %sum(kmean2(1:2000)==2)+sum(kmean2(2001:4000)==1))
-fault1=[find(kmean1(1:2000)==1);find(kmean1(2001:4000)==2)];
-fault2=[find(kmean2(1:2000)==2);find(kmean2(2001:4000)==1)];
+fault1=[find(kmean1(1:2000)==2);find(kmean1(2001:4000)==1)];
+fault2=[find(kmean2(1:2000)==1);find(kmean2(2001:4000)==2)];
 scatter3(XY(:,1),XY(:,2),XY(:,3),3,'green','filled')
 hold on;
 scatter3(XY(fault1,1),XY(fault1,2),XY(fault1,3),3,'black','filled')
 scatter3(XY(:,1),XY(:,2),XY(:,3),3,'green','filled')
 hold on;
 scatter3(XY(fault2,1),XY(fault2,2),XY(fault2,3),3,'filled')
+
+figure;
+subplot(2,1,1);hold on
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,kmean2,'filled')
+title("Epsilon Setting");
+subplot(2,1,2);hold on
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,kmean1,'filled')
+title("Path approach")
+
+
+
+figure;
+subplot(2,2,1);hold on
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,'filled')
+title("Original Data");
+subplot(2,2,3);hold on
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,W,'filled')
+title("Path approach")
+subplot(2,2,4);hold on
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,W2,'filled')
+title("Epsilon Setting");
 
 %intersecting curve
 N=2000;

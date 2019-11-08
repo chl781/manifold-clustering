@@ -14,7 +14,7 @@ for s=2+k1:k+1
     path=X(I(geodesic),:); 
     pathLength=length(geodesic);
     if pathLength<=4 % Set if two nodes are far away, we drop the connection.
-        break
+        continue
     end
     if pathLength>=5 % These two parameters 4 and 5 can be changed
         t1=SmoothTheCurve(path,epsilon1);
@@ -28,4 +28,9 @@ for s=2+k1:k+1
         M(p)=I(s);
         p=p+1;
     end
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %still just trying though
+    %if ~all(M) %add a modification step to prevent the singular situation.
+    %    M(1)=I(2);
+    %end
 end

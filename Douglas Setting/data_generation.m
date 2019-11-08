@@ -45,7 +45,7 @@ X=[x1;y1;z1];
 Y=[x2;y2;z2];
 XY=[X,Y]';
 %plot3(XY(1:end,1),XY(1:end,2),XY(1:end,3),'.')
-[A,W] = PBC_main(XY,60,20,0.9,3,0.01);
+[A,W] = PBC_main(XY,60,20,0.6,3,0.2);
 
 scatter3(XY(:,1),XY(:,2),XY(:,3),3,W,'filled')
 %max(W(:,2))

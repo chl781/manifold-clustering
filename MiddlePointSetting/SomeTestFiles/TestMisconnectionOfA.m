@@ -1,6 +1,6 @@
 number=0;
-for i=2001:4000
-    if any(find(A(i,:)==1)<=2000)
+for i=1:401
+    if any(find(A(i,:)==1)>401)
         number=number+1;
         disp(i)
         disp(XY(i,:))
