@@ -26,7 +26,7 @@ for i=2:m-2
     t=fminbnd(@(t) -sum((t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:)).*(a(i+1,:)- ...
         (t*path(i,:)+(1-t)*path(i+1,:))))/norm(t*path(i,:)+(1-t)*path(i+1,:)-a(i-1,:),2) ...
     /norm(a(i+1,:)-(t*path(i,:)+(1-t)*path(i+1,:)),2),0,1); 
-        %This function is for finding the minimum, so we need to add some changes.
+        %This function is for finding the minimum, so we need to add negative sign.
     a(i,:)=t*path(i,:)+(1-t)*path(i+1,:);
     t1Iter(i)=t;
 end
