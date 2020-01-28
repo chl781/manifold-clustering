@@ -28,7 +28,7 @@ for s=2+k1:k+1
     end
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %still just trying though
-    %if ~all(M) %add a modification step to prevent the singular situation.
+    %if ~any(M) %add a modification step to prevent the singular situation.
     %    M(1)=I(2);
     %end
 end

@@ -1,7 +1,7 @@
 %This file is for data generating.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %two vertical segments Fig. 4
-ns=2000;
+ns=400;
 X1=2*(rand(1,ns)-0.5);
 Y1=zeros(1,ns);
 X=[X1;Y1];

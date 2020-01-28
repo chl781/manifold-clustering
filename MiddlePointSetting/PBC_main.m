@@ -18,8 +18,9 @@ D = pdistancematrix(X,p);
 A = zeros(n,n);
 
 for i = 1:n
-    if(mod(i,100)==0)
-        disp(i/100)
+    if(mod(i,10)==0)
+        disp(i/10)
+        disp(sum(sum(A)))
     end
     M=findkNN(X,D,k,k1,i,epsilon,epsilon1);
     t=length(M);
@@ -28,6 +29,9 @@ for i = 1:n
        A(M,i)=ones(t,1);
     end
 end
+%one setting could be changed.
+%A=(A+A')/2;
+%A(A==1/2)=0;
 
 %The following is spectral clustering algorithm
 W=spectral_clustering(A);
