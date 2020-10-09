@@ -8,25 +8,19 @@ function [A,idx1]=main_PBC3(X,k,k1,r,alpha,s)
 nearnodes=cell(n,1);
 closenodes=cell(n,1);
 epsilonminusepsilonplusnodes=cell(n,1);
-DD=sparse(n,n);
-for i=1:n
-    for j=i+1:n
-        DD(i,j)=norm(X(i,:)-X(j,:));
-        DD(j,i)=DD(i,j);
-    end
-end
 %construct epsilon_+,epsilon_- graph
 for i=1:n
     for j=i+1:n
-        if DD(i,j)<k && DD(i,j)>0
+        a=norm(X(i,:)-X(j,:));
+        if a<k && a>0
             nearnodes{i}=[nearnodes{i},j];
             nearnodes{j}=[nearnodes{j},i];
         end
-        if DD(i,j)<k && DD(i,j)>k1
+        if a<k && a>k1
             epsilonminusepsilonplusnodes{i}=[epsilonminusepsilonplusnodes{i},j];
             epsilonminusepsilonplusnodes{j}=[epsilonminusepsilonplusnodes{j},i];
         end
-        if DD(i,j)<r && DD(i,j)>0
+        if a<r && a>0
             closenodes{i}=[closenodes{i},j];
             closenodes{j}=[closenodes{j},i];
         end
