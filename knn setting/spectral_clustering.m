@@ -15,9 +15,9 @@ end
 L1=D1*(D-A)*D1;
 L1new=speye(size(A,1))-L1;
 %[W,s]=eigs(L,2);
-[W1,s1]=eigs(L1new,10);
-for i=1:10
-    if abs(s1(i,i))<0.999999
+[W1,s1]=eigs(L1new,100);
+for i=1:100
+    if abs(s1(i,i))<0.999999999999
         break
     end
 end

@@ -25,5 +25,6 @@ end
 idx =spectral_clustering(A,s);
 idx1=kmeans(idx,s);
 %gscatter(X(:,1),X(:,2),idx);
+beep
 
 end

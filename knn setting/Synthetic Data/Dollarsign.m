@@ -1,12 +1,13 @@
 function [X] = Dollarsign(~)
 % X: generated data set
 % m : label
-n=32000;
-noise=.03;
+n=50000;
+noise=0;
 
 % choose S part over | part with prob based on area of each
 % S is 3*pi, | is 6
-p = (3*pi)/(6+3*pi);
+p=1/2;
+%p = (3*pi)/(6+3*pi);
 
 X = zeros(n,3);
 Y = zeros(n,1);
