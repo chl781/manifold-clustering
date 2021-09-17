@@ -17,4 +17,3 @@ D2(:,2)=Y2+.00*noise;   % add noise to the data
 D=[D1;D2];
 
 end
-%%[group,path] = Path_Based_Cluster( D , 70 , 7 );

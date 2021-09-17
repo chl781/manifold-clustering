@@ -51,6 +51,3 @@ randidx = randperm(n);
 X = X(randidx,:);
 Y = Y(randidx,:);
 m = m(randidx,:);
-
-
-% [group,path]=Path_Based_Cluster_LandMarks( D ,10, 70 , 15);

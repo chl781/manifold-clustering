@@ -23,5 +23,3 @@ D2=[x y];
  D=[D1;D2];
 
 end
-
-% [group,path]=Path_Based_Cluster_LandMarks( D ,30 , 70 , 15 , 2 );

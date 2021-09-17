@@ -19,4 +19,3 @@ D2(:,2)=Y2;
 D=[D1;D2];
 
 end
-% [group,path] = Path_Based_Cluster( D , 70 , 6 );

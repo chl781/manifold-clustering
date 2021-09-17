@@ -17,4 +17,3 @@ D2(:,3)=zeros(n2,1)+.0*noise;
 D=[D1;D2];
 
 end
-% [group,path]=Path_Based_Cluster_LandMarks( D ,10, 70 , 15);

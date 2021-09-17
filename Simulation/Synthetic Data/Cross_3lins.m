@@ -41,4 +41,3 @@ Dclean=[Dclean1;Dclean2;Dclean3];
 
 
 end
-% [group,path] = Path_Based_Cluster( D , 70 , 6 );
