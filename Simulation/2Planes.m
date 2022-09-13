@@ -1,10 +1,3 @@
-% try to do some easy perturbation:
-% three lines intersecting.
-% two circles are hard to interpret because of the parameter is either easy
-% to destroy the connection or easy to make them connect. When the points are not
-% almost on a straight line,then it is not easy to control the parameters.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Generate some data.
 n=20000;
 x=zeros(1,n);
 for i=1:n

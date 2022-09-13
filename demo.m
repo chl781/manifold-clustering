@@ -1,3 +1,8 @@
+clc
+clear all
+
+addpath 'knn setting'
+
 ns=8000;
 
 angle1=rand(1,ns)*2*pi;
@@ -16,4 +21,4 @@ Y=[x2;y2;z2];
 XY=[X,Y]';
 
 [A,idx] = main_PBC2(XY,100,60,15,10,2);
-% scatter3(XY(:,1),XY(:,2),XY(:,3),3,idx,'filled')
+scatter3(XY(:,1),XY(:,2),XY(:,3),3,idx,'filled')

@@ -1,7 +1,5 @@
 
-
-
-%%cone
+%% cone
 n1=24000;
 teta=(2*pi)*rand(n1,1);     % Using  spherical coordinates
 r=2*rand(n1,1);
