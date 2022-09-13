@@ -1,4 +1,4 @@
-# SC with angle-constrained annular proximity graph
+# Spectral Clustering with angle-constrained annular proximity graph
 
 This joint work is written by Nicolas Garcia Trillos(garciatrillo@wisc.edu), Pengfei He(hepengf1@msu.edu), and Chenghui Li(cli539@wisc.edu).
 
