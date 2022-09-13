@@ -8,6 +8,8 @@ D=get(gca,'Children'); %get the handle of the line object
 XData=get(D,'XData'); %get the x data
 YData=get(D,'YData'); %get the y data
 ZData=get(D,'ZData');
+XY=[XData',YData',ZData'];
+
 figure;
 scatter3(XData,YData,ZData,3,data,'filled')
 

@@ -17,7 +17,7 @@ L1new=speye(size(A,1))-L1;
 %[W,s]=eigs(L,2);
 [W1,s1]=eigs(L1new,100);
 for i=1:100
-    if abs(s1(i,i))<0.999999999999
+    if abs(s1(i,i))<0.99999
         break
     end
 end
