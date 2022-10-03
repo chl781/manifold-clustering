@@ -1,5 +1,3 @@
-function[D]=TwoPlaneTwoLine(~)
-
 n1=4000;
 P1=zeros(n1,3);
 P1(:,1)=2-4*rand(n1,1);
@@ -23,4 +21,6 @@ L2(:,2)=1.5;
 L2(:,3)=3-6*rand(n2,1);
 
 D=[P1;P2;L1;L2];
-end
+
+[A,idx] = main_PBC2(D,120,60,15,8,5);
+

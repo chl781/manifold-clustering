@@ -15,4 +15,4 @@ Y = HyperSphere(y,r)'+[sqrt(2),0,0,0];
 XY=[X;Y];
 
 [A,W] = main_PBC2(XY,250,200,50,20,2);
-s1=kmeans(W,2);
+

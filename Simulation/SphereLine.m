@@ -1,4 +1,3 @@
-function[D]=SphereLine(~)
 
 n1=6000;
 u=pi*rand(n1,1);
@@ -15,3 +14,5 @@ y=zeros(n2,1);
 z=zeros(n2,1);
 D2=[x y z];
 D=[D1;D2];
+
+[A,idx] = main_PBC2(D,120,80,20,10,2);
