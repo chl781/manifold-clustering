@@ -6,7 +6,7 @@ It is used for solving multi-manifold clustering problem. Notice that we used $\
 
 An example illustration to run code is:
 
-For knn setting: If D is the data set, one suggested pattern: $k_+ = 6*r, k_- = 4*r, r = 5*2^m$ . 
+For knn setting: If D is the data set, one suggested pattern: $k_+$ = 6*r, k_- = 4*r, r = 5*2^m . 
 [A,idx]=main_PBC2(D,120,80,20,10,2);
 
 For epsilon setting: the ratio depends on the embedded dimension, suggested as the ratio of kNN. One suggested pattern: eps_- = r*6^{1/m} , eps_+ =  r*4^{1/m}.
